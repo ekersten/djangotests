@@ -1,0 +1,14 @@
+<html>
+<head>
+	<title>Form Inicio</title>
+</head>
+<body>
+	<h1>Comunas Form</h1>
+	<form action="/comunas/" method="post">
+		{% csrf_token %}
+		{{ form.as_p }}
+		{{ recieved_name }}
+		<input type="submit" value="Enviar">
+	</form>
+</body>
+</html>
