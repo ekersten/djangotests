@@ -1,0 +1,9 @@
+.filedrag {
+	padding: .8em;
+	border: 4px dashed #000;
+	display: inline-block;
+}
+
+.filedrag.hover {
+	border-color: #090;
+}

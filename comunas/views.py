@@ -13,4 +13,4 @@ def inicio(request):
 		form = ComunaForm()
 
 	ctx['form'] = form
-	return render(request, 'comunas/inicio.html', ctx)
+	return render(request, 'comunas/comunas.html', ctx)

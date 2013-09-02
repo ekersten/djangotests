@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block title %}Comunas &raquo; {{ block.super}}{% endblock %}
+
+{% block content %}
+<h1>Comunas Form</h1>
+{% if form.is_multipart %}
+<form action="/comunas/" method="post" enctype="multipart/form-data" id="uploadform">
+{% else %}
+<form action="/comunas/" method="post" id="uploadform">
+{% endif %}
+	{% csrf_token %}
+	{{ form.as_p }}
+	{{ recieved_name }}
+	<input type="submit" value="Enviar">
+</form>
+<div id="messages"></div>
+{% endblock %}
+
+{% block styles %}
+{{ block.super }}
+<link type="text/css" rel="stylesheet" href="{% static "css/comunas.css" %}"></link>
+{% endblock %}
+
+{% block scripts %}
+{{ block.super }}
+<script src="{% static "js/comunas.js" %}"></script>
+{% endblock %}

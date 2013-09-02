@@ -1,3 +1,7 @@
+# Relative path
+import os
+PROJECT_PATH = os.path.realpath(os.path.dirname(__file__))
+
 # Django settings for djangotests project.
 
 DEBUG = True
@@ -72,6 +76,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    os.path.join(PROJECT_PATH, 'static'),
 )
 
 # List of finder classes that know how to find static files in
@@ -87,8 +92,8 @@ SECRET_KEY = 'yyuci9o_g(7!klb-j5y*8tsyy6hn!p3^_y9gj4ji(b+jo8ln!)'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
+    'django.template.loaders.filesystem.Loader',
 #     'django.template.loaders.eggs.Loader',
 )
 
@@ -108,9 +113,7 @@ ROOT_URLCONF = 'djangotests.urls'
 WSGI_APPLICATION = 'djangotests.wsgi.application'
 
 TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
+    os.path.join(PROJECT_PATH, 'templates'),
 )
 
 INSTALLED_APPS = (
